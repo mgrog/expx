@@ -1,0 +1,13 @@
+{
+  "name": "SOL",
+  "chain": "Solana",
+  "protocol": "Sushi",
+  "base": 0.043,
+  "reward": 0,
+  "rewards": {},
+  "apy": 0.043,
+  "apy_7_day": null,
+  "tvl": 7183920182,
+  "risk": {},
+  "series": []
+}

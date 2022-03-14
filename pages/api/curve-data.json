@@ -1,0 +1,13 @@
+{
+  "name": "AVAX",
+  "chain": "Avalanche",
+  "protocol": "Curve",
+  "base": 0.043,
+  "reward": 0,
+  "rewards": {},
+  "apy": 0.043,
+  "apy_7_day": null,
+  "tvl": 5997508308,
+  "risk": {},
+  "series": []
+}

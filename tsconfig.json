@@ -14,15 +14,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
+    "baseUrl": "." /* Base directory to resolve non-absolute module names. */,
     "paths": {
       "@public/*": ["public/*"],
       "@components/*": ["src/components/*"],
-      "@elements": ["src/elements"],
+      "@primitives": ["src/primitives"],
       "@hooks": ["src/hooks"],
+      "@utils/*": ["src/utils/*"],
+      "@root/*": ["./*"],
       "tests": ["__tests__/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.js"],
   "exclude": ["node_modules"]
 }
