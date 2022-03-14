@@ -35,7 +35,7 @@ function AccountPage() {
             <LineChart width={1000} height={300} maxValue={0.12} url='/api/fake-lido' />
           </Suspense>
         </Card>
-        <Card css={{display: 'flex', flex: 1, height: 350}}>
+        <Card css={{display: 'flex', flex: 1, height: 350, px: 0}}>
           <Suspense fallback={<Spinner />}>
             <PoolSelector />
           </Suspense>

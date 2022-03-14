@@ -29,9 +29,11 @@ export const Button = styled('button', {
       reactive: {
         '&:hover': {
           filter: 'brightness(110%)',
+          cursor: 'pointer',
         },
         '&:active': {
           filter: 'brightness(90%)',
+          cursor: 'pointer',
         },
       },
     },
@@ -42,7 +44,8 @@ export const Button = styled('button', {
         padding: 0,
         backgroundImage: 'none',
         '&:hover': {
-          backgroundColor: 'rgba(255, 255, 255, 0.2)',
+          backgroundColor: 'rgba(255, 255, 255, 0.05)',
+          cursor: 'pointer',
         },
       },
     },

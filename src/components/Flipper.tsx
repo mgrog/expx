@@ -24,7 +24,7 @@ function Flipper({children, header, dataLength}: Props) {
   return (
     <Box css={{display: 'flex', height: '100%', width: '100%'}}>
       <Button icon onClick={() => flip(-1)}>
-        <Image width={30} height={'100%'} src='/chevron-left.svg' />
+        <Image width={50} height={'100%'} src='/chevron-left.svg' />
       </Button>
       <Box css={{width: '100%'}}>
         {header}
@@ -43,7 +43,7 @@ function Flipper({children, header, dataLength}: Props) {
         </Box>
       </Box>
       <Button icon onClick={() => flip(1)}>
-        <Image width={30} height={'100%'} src='/chevron-right.svg' />
+        <Image width={50} height={'100%'} src='/chevron-right.svg' />
       </Button>
     </Box>
   );

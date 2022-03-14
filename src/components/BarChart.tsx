@@ -89,7 +89,7 @@ function BarChart({height, width, maxValue, selectedPoolIndex}: Props) {
         <line x1='0' y1={baseY} x2={width} y2={baseY} stroke='#304858' />
       </g>
       <g>
-        <line x1='30' y1='0' x2='30' y2={height} stroke='#304858' />
+        <line x1='30' y1='0' x2='30' y2={baseY} stroke='#304858' />
       </g>
     </svg>
   );
