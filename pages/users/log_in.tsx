@@ -1,4 +1,4 @@
-import {Text} from '@primitives';
+import {Text} from '@elements';
 import React from 'react';
 
 function LogIn() {

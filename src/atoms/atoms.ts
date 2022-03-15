@@ -3,4 +3,6 @@ import {atom} from 'jotai';
 
 const userAtom = atom<User | null>(null);
 
-export {userAtom};
+const selectedPoolAtom = atom(0);
+
+export {userAtom, selectedPoolAtom};

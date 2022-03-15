@@ -1,5 +1,5 @@
 import {SplashLayout} from '@components/SplashLayout';
-import {Box, Button, Input, Text} from '@primitives';
+import {Box, Button, Input, Text} from '@elements';
 import type {NextPage} from 'next';
 
 const Home: NextPage = () => {

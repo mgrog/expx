@@ -1,8 +1,7 @@
 import {fetcher} from '@root/fetcher';
 import {PoolData} from '@root/pages/api/data.types';
-import {displayPercent} from '@utils/displayPercent';
 import React, {Fragment, useEffect, useMemo} from 'react';
-import {animated, useSprings} from 'react-spring';
+import {animated, useSpring, useSprings} from 'react-spring';
 import useSWR from 'swr';
 
 type Props = {
@@ -13,7 +12,10 @@ type Props = {
 };
 
 function BarChart({height, width, maxValue, selectedPoolIndex}: Props) {
-  const {data} = useSWR<PoolData[], any>('/api/fake-pools', fetcher, {suspense: true});
+  const {data} = useSWR<PoolData[], any>('/api/fake-pools?', fetcher, {
+    suspense: true,
+  });
+
   const selectedPool = data![selectedPoolIndex];
   // space before bars start
   let marginX = 50;
@@ -21,52 +23,81 @@ function BarChart({height, width, maxValue, selectedPoolIndex}: Props) {
 
   const getHeight = (value: number) => (value / maxValue) * height;
 
-  const [springs, api] = useSprings(data!.length, (_index) => ({
+  const comparedPools = data!.filter((_p, i) => i !== selectedPoolIndex);
+
+  const [animatedStyles, selectedSpring] = useSpring(() => ({
     animatedHeight: 0,
+    iconY: baseY + 5,
+    baseY: baseY,
+  }));
+
+  const [springs, comparedSprings] = useSprings(comparedPools!.length, (_index) => ({
+    animatedHeight: 0,
+    iconY: baseY + 5,
     baseY: baseY,
   }));
 
   useEffect(() => {
-    api.start((index) => ({
-      animatedHeight: getHeight(data![index].apy),
-      baseY: baseY - getHeight(data![index].apy),
+    selectedSpring.start({
+      animatedHeight: getHeight(selectedPool.apy),
+      baseY: baseY - getHeight(selectedPool.apy),
+      iconY: baseY - getHeight(selectedPool.apy) - 40,
+    });
+
+    comparedSprings.start((index) => ({
+      animatedHeight: getHeight(comparedPools[index].apy),
+      baseY: baseY - getHeight(comparedPools[index].apy),
+      iconY: baseY - getHeight(comparedPools[index].apy) - 40,
     }));
+    return () => {
+      comparedSprings.stop();
+    };
   }, [selectedPoolIndex]);
 
-  const barCouple = (selectedPoolIndex: number, comparedPoolIndex: number, baseX: number) => {
+  const barCouple = (comparedPoolIndex: number, baseX: number) => {
     const OFFSET = 40;
-    // add margin at bottom
+
     return (
-      comparedPoolIndex !== selectedPoolIndex && (
-        <Fragment key={comparedPoolIndex}>
-          <g>
-            <rect fill='#00BFA5' width='20' height='5' x={baseX} y={baseY - 5} />
-            <animated.rect
-              fill='#00BFA5'
-              width='20'
-              height={springs[selectedPoolIndex].animatedHeight}
-              x={baseX}
-              y={springs[selectedPoolIndex].baseY}
-              rx='5'
-              ry='5'
-            />
-            {/* TODO: add icon */}
-          </g>
-          <g>
-            <rect fill='#2962FF' width='20' height='5' x={baseX + OFFSET} y={baseY - 5} />
-            <animated.rect
-              fill='#2962FF'
-              width='20'
-              height={springs[comparedPoolIndex].animatedHeight}
-              x={baseX + OFFSET}
-              y={springs[comparedPoolIndex].baseY}
-              rx='5'
-              ry='5'
-            />
-            {/* TODO: add icon */}
-          </g>
-        </Fragment>
-      )
+      <Fragment key={comparedPoolIndex}>
+        <g>
+          <rect fill='#00BFA5' width='20' height='5' x={baseX} y={baseY - 5} />
+          <animated.rect
+            fill='#00BFA5'
+            width='20'
+            height={animatedStyles.animatedHeight}
+            x={baseX}
+            y={animatedStyles.baseY}
+            rx='5'
+            ry='5'
+          />
+          <animated.image
+            xlinkHref={selectedPool.icon}
+            x={baseX - 4}
+            y={animatedStyles.iconY}
+            width={28}
+            height={28}
+          />
+        </g>
+        <g>
+          <rect fill='#2962FF' width='20' height='5' x={baseX + OFFSET} y={baseY - 5} />
+          <animated.rect
+            fill='#2962FF'
+            width='20'
+            height={springs[comparedPoolIndex].animatedHeight}
+            x={baseX + OFFSET}
+            y={springs[comparedPoolIndex].baseY}
+            rx='5'
+            ry='5'
+          />
+          <animated.image
+            xlinkHref={comparedPools[comparedPoolIndex].icon}
+            x={baseX + OFFSET - 4}
+            y={springs[comparedPoolIndex].iconY}
+            width={28}
+            height={28}
+          />
+        </g>
+      </Fragment>
     );
   };
 
@@ -80,16 +111,16 @@ function BarChart({height, width, maxValue, selectedPoolIndex}: Props) {
       <title id='title'>A bar chart showing pool information</title>
       {useMemo(
         () =>
-          data!.map((pool, i) => {
-            return barCouple(selectedPoolIndex, i, marginX + (i ? i - 1 : 0) * 150);
+          comparedPools.map((_pool, i) => {
+            return barCouple(i, marginX + i * 150);
           }),
-        [data, selectedPool],
+        [comparedPools, selectedPool],
       )}
       <g>
-        <line x1='0' y1={baseY} x2={width} y2={baseY} stroke='#304858' />
+        <line x1='20' y1={baseY} x2={width} y2={baseY} stroke='#304858' />
       </g>
       <g>
-        <line x1='30' y1='0' x2='30' y2={baseY} stroke='#304858' />
+        <line x1='30' y1='0' x2='30' y2={baseY + 10} stroke='#304858' />
       </g>
     </svg>
   );

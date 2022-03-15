@@ -11,14 +11,19 @@ type Props = {
   width: number;
   height: number;
   maxValue: number;
-  url: string;
+  selectedPoolIndex: number;
 };
 
-function LineChart({width, height, maxValue, url}: Props) {
-  const {data} = useSWR<ExtendedPoolDataWithSeries>(url, fetcher, {
-    suspense: true,
-  });
-  let dataPoints = data!.series.slice(0, 20);
+function LineChart({width, height, maxValue, selectedPoolIndex}: Props) {
+  const {data} = useSWR<ExtendedPoolDataWithSeries>(
+    `/api/fake-pools/${selectedPoolIndex}`,
+    fetcher,
+    {
+      suspense: true,
+    },
+  );
+
+  let dataPoints = data!.series.slice(0, 30);
 
   const MARGIN_X = 60;
   const MARGIN_BOTTOM = 50;

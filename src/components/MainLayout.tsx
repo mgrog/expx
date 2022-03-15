@@ -2,7 +2,7 @@ import React, {ReactNode} from 'react';
 import {NavBar} from '@components/NavBar';
 import {useRouter} from 'next/router';
 import Image from 'next/image';
-import {Box} from '@primitives';
+import {Box} from '@elements';
 
 function MainLayout({children}: {children: ReactNode}) {
   const router = useRouter();

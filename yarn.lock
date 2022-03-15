@@ -10,7 +10,7 @@
     core-js-pure "^3.20.2"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.13.10", "@babel/runtime@^7.16.3", "@babel/runtime@^7.17.2":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.13.10", "@babel/runtime@^7.16.3":
   version "7.17.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.2.tgz#66f68591605e59da47523c631416b18508779941"
   integrity sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==
@@ -536,15 +536,6 @@
   resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.7.tgz#aea2403fac726db66d1740d29557e3910b1a1dc7"
   integrity sha512-6AxpUag7OW55ANzRnuy7R15FEyQeZ66fytVo3BBilFIU0mfo3t49CAMcEAL/A1SbhSj/FCdWkn/XrbjGBTJTzg==
 
-"@tanem/svg-injector@^10.1.19":
-  version "10.1.20"
-  resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-10.1.20.tgz#c79510f18f5e8326bffbd60779cebe5ce1a0767a"
-  integrity sha512-oCvOchFxRPel4CAew6GA5nQxi0jpbH367wztrjcAVx8eQhpptGiyuESON3maZg5k8TCOHGn9n8Y+0AKxlH4bIg==
-  dependencies:
-    "@babel/runtime" "^7.17.2"
-    content-type "^1.0.4"
-    tslib "^2.3.1"
-
 "@types/js-cookie@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-3.0.1.tgz#04aa743e2e0a85a22ee9aa61f6591a8bc19b5d68"
@@ -560,7 +551,7 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
   integrity sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==
 
-"@types/prop-types@*", "@types/prop-types@^15.7.4":
+"@types/prop-types@*":
   version "15.7.4"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
@@ -796,11 +787,6 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
-
-content-type@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
-  integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
 
 core-js-pure@^3.20.2:
   version "3.21.1"
@@ -1975,16 +1961,6 @@ react-style-singleton@^2.1.0:
     invariant "^2.2.4"
     tslib "^1.0.0"
 
-react-svg@^14.1.14:
-  version "14.1.14"
-  resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-14.1.14.tgz#2e1a075bcecf9c72fd95015530423036f7b17bed"
-  integrity sha512-moaMYL62eE8La7uRti9vkpM0faLcpZL47gmJXNgCtn1X1piO/EBBliNilOUifG8K1H6gtrzD0dqLHl2BEIf/8A==
-  dependencies:
-    "@babel/runtime" "^7.17.2"
-    "@tanem/svg-injector" "^10.1.19"
-    "@types/prop-types" "^15.7.4"
-    prop-types "^15.8.1"
-
 react@^18.0.0-rc.2:
   version "18.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/react/-/react-18.0.0-rc.2.tgz#f54de68a912454331f7f718794fbf5e6c01eb855"
@@ -2206,11 +2182,6 @@ tslib@^1.0.0, tslib@^1.8.1, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tslib@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
-  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tsutils@^3.21.0:
   version "3.21.0"

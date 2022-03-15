@@ -1,4 +1,4 @@
-import {Box, Text} from '@primitives';
+import {Box, Text} from '@elements';
 import {styled} from '@root/stitches.config';
 import React, {ReactNode} from 'react';
 

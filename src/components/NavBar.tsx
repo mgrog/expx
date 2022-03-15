@@ -1,4 +1,4 @@
-import {Separator} from '@primitives';
+import {Separator} from '@elements';
 import * as NavBarPrimitive from '@radix-ui/react-navigation-menu';
 import {styled} from '@root/stitches.config';
 import Link, {LinkProps} from 'next/link';
@@ -64,6 +64,7 @@ const StyledLink = styled('div', {
 const StyledItem = styled(NavBarPrimitive.Item, {});
 
 const StyledNavPosition = styled('div', {
+  height: 50,
   variants: {
     screen: {
       desktop: {

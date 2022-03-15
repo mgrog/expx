@@ -1,4 +1,4 @@
-import {Box, Separator, Text} from '@primitives';
+import {Box, Separator, Text} from '@elements';
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
 import {SeriesDataPoint} from '@root/pages/api/data.types';
 import {keyframes, styled} from '@root/stitches.config';

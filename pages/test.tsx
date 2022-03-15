@@ -1,6 +1,6 @@
-import {Box, Button, Card, Text} from '@primitives';
+import {Box, Button, Card, Text} from '@elements';
 import {useFlipTransition} from '@root/src/hooks/useFlipTransition';
-import {Slide, Spinner} from '@primitives';
+import {Slide, Spinner} from '@elements';
 import dynamic from 'next/dynamic';
 import React, {Suspense, useCallback, useState} from 'react';
 const LineChart = dynamic(() => import('@components/LineChart'), {ssr: false});

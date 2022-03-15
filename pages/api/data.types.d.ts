@@ -11,6 +11,7 @@ export type PoolData = {
   apy: number;
   tvl: number;
   selected?: boolean;
+  icon: string;
 };
 
 export type ExtendedPoolData = {
