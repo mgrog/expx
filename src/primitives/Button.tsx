@@ -7,6 +7,7 @@ export const Button = styled('button', {
   /* a little reset */
   backgroundColor: 'transparent',
   border: 'none',
+  boxSizing: 'border-box',
   /* ... */
   variants: {
     color: {

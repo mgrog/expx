@@ -9,10 +9,6 @@ export default function handler(
   setTimeout(() => res.status(200).json(fakeLido), 2000);
 }
 
-const seriesFaker = (apyRange: number[], dateRange: number[]) => {};
-
-const randGen = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
-
 const fakeLido = {
   name: 'ETH',
   chain: 'Ethereum',

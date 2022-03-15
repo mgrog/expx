@@ -1,3 +1,4 @@
+import {getCssText} from '@root/stitches.config';
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 
 class MyDocument extends Document {
@@ -9,6 +10,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Poppins:wght@400;600&display=swap'
             rel='stylesheet'
           />
+          <style id='stitches' dangerouslySetInnerHTML={{__html: getCssText()}} />
         </Head>
         <body>
           <Main />

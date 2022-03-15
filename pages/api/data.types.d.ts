@@ -24,3 +24,20 @@ export type ExtendedPoolData = {
 export type ExtendedPoolDataWithSeries = {
   series: SeriesDataPoint[];
 } & ExtendedPoolData;
+
+export type User = {
+  id: number;
+  username: string;
+  contracts: [
+    {
+      id: number;
+      symbol: string;
+      holding: number;
+    },
+  ];
+};
+
+export type LogInPayload = {
+  username: string;
+  password: string;
+};
