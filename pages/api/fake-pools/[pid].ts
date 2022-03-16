@@ -1,5 +1,4 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import {ExtendedPoolDataWithSeries} from '@root/pages/api/data.types';
 import {formatISO, sub} from 'date-fns';
 import type {NextApiRequest, NextApiResponse} from 'next';
 
@@ -64,7 +63,6 @@ const data = [fakeLido, fakeSushi, fakePancake, fakeBalancer];
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   const {pid} = req.query;
-  console.log(pid, data[+pid]);
 
   setTimeout(() => res.status(200).json(data[+pid]), 500);
 }

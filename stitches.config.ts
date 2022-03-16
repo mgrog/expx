@@ -16,6 +16,7 @@ export const {styled, css, keyframes, getCssText} = createStitches({
       green: '#00BFA5',
       'angled-violet-gradient': 'linear-gradient(to bottom right, #555FDA, #6D1AB1)',
       'violet-800': '#100958',
+      'error-red': '#cc0000',
     },
     fontSizes: {
       1: '12px',

@@ -1,7 +1,7 @@
 import ChartInfo from '@components/ChartInfo';
 import {fetcher} from '@root/fetcher';
 import {ExtendedPoolDataWithSeries} from '@root/pages/api/data.types';
-import {displayPercent} from '@utils/displayPercent';
+import {displayPercent} from '@lib/utils';
 import {parseISO} from 'date-fns';
 import format from 'date-fns/format';
 import React, {Fragment, useMemo} from 'react';

@@ -2,7 +2,7 @@ import {Box, Separator, Text} from '@elements';
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
 import {SeriesDataPoint} from '@root/pages/api/data.types';
 import {keyframes, styled} from '@root/stitches.config';
-import {displayPercent} from '@utils/displayPercent';
+import {displayPercent} from '@lib/utils';
 import React from 'react';
 import format from 'date-fns/format';
 import {parseISO} from 'date-fns';

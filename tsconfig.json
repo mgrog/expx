@@ -20,8 +20,8 @@
       "@components/*": ["src/components/*"],
       "@elements": ["src/elements"],
       "@hooks": ["src/hooks"],
-      "@utils/*": ["src/utils/*"],
       "@root/*": ["./*"],
+      "@lib/*": ["lib/*"],
       "tests": ["__tests__/*"]
     }
   },

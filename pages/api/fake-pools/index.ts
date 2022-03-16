@@ -1,3 +1,4 @@
+import {errorHandler} from '@lib/error-handler';
 import {PoolData} from '@root/pages/api/data.types';
 import type {NextApiRequest, NextApiResponse} from 'next';
 

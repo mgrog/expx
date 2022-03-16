@@ -6,3 +6,4 @@ export * from './Separator';
 export * from './Slide';
 export * from './Spinner';
 export * from './Input';
+export * from './Error';

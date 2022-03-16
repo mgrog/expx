@@ -6,4 +6,11 @@ export const Input = styled('input', {
   height: 35,
   fontSize: '$2',
   px: 10,
+  variants: {
+    error: {
+      true: {
+        border: 'solid 1px $error-red',
+      },
+    },
+  },
 });

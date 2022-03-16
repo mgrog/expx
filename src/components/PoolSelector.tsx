@@ -3,7 +3,7 @@ import {Box, Separator, Text} from '@elements';
 import {fetcher} from '@root/fetcher';
 import {PoolData} from '@root/pages/api/data.types';
 import {selectedPoolAtom} from '@root/src/atoms';
-import {displayPercent} from '@utils/displayPercent';
+import {displayPercent} from '@lib/utils';
 import {useSetAtom} from 'jotai';
 import React from 'react';
 import useSWR from 'swr';

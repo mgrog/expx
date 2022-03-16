@@ -3,6 +3,8 @@ import {styled} from '@root/stitches.config';
 export const Card = styled('div', {
   padding: 15,
   borderRadius: 10,
+  width: 400,
+  height: 300,
   variants: {
     color: {
       dark: {
@@ -15,15 +17,8 @@ export const Card = styled('div', {
         height: '100%',
       },
     },
-    size: {
-      medium: {
-        width: 400,
-        height: 300,
-      },
-    },
   },
   defaultVariants: {
     color: 'dark',
-    size: 'medium',
   },
 });
