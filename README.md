@@ -22,3 +22,7 @@ Sign in with "username": "user@expx.fi", "password": "Br98PKe\*js76QaF@1OdX"
 
 - Responsive mode
 - Changing pools with the arrows
+
+### Notes
+
+- The authentication is a little faked, but I felt it was outside the scope to have a fully working jwt authentication just for a demo. It uses _a_ cookie at least.
