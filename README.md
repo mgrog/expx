@@ -22,6 +22,7 @@ Sign in with "username": "user@expx.fi", "password": "Br98PKe\*js76QaF@1OdX"
 
 - Responsive mode
 - Changing pools with the arrows
+- Hover on the line chart dots
 
 ### Notes
 
