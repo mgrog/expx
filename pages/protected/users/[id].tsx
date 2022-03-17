@@ -69,7 +69,7 @@ function AccountPage() {
             '@bp2': {width: 700},
             '@bp3': {width: 900},
           }}>
-          <Box flex col centered='vertical' css={{minHeight: 235, '@bp1': {minHeight: 280}}}>
+          <Box flex col centered='vertical' css={{minHeight: 235, '@bp1': {minHeight: 325}}}>
             <Suspense fallback={<Spinner />}>
               <LineChart
                 width={lineChartWidth}
