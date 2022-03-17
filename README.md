@@ -28,3 +28,4 @@ Sign in with "username": "user@expx.fi", "password": "Br98PKe\*js76QaF@1OdX"
 - The authentication is a little faked, but I felt it was outside the scope to have a fully working jwt authentication just for a demo. It uses _a_ cookie at least.
 - I'm using React 18 RC, hopefully nothing blows up but contact me if something isn't working on your end.
 - I added a few random datasets, I'm not fully sure if they make sense from a defi perspective but they exist as a demonstration of UX possibilities.
+- Forgive me if my defi terminology is a little off.
