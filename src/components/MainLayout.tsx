@@ -2,7 +2,7 @@ import React, {ReactNode} from 'react';
 import {NavBar} from '@components/NavBar';
 import {useRouter} from 'next/router';
 import Image from 'next/image';
-import {Box} from '@elements';
+import {Box, Text} from '@elements';
 import {userAtom} from '@root/src/atoms';
 import Cookies from 'js-cookie';
 import {useAtom, useSetAtom} from 'jotai';
@@ -19,8 +19,15 @@ function MainLayout({children}: {children: ReactNode}) {
 
   return (
     <>
-      <Box css={{position: 'absolute', top: 15, left: 15}}>
-        <Image height={50} width={218} src='/logo.png' />
+      <Box css={{position: 'absolute', top: 15, left: 15, paddingBottom: 60}}>
+        <Box flex css={{gap: 30}}>
+          <Image height={50} width={218} src='/logo.png' />
+          {user && (
+            <Text as='h4' css={{textTransform: 'capitalize', marginTop: 10}}>
+              {user.username}
+            </Text>
+          )}
+        </Box>
       </Box>
       <NavBar.Position screen={{'@initial': 'mobile', '@bp1': 'desktop'}}>
         <NavBar>
@@ -49,7 +56,9 @@ function MainLayout({children}: {children: ReactNode}) {
           </NavBar.Item>
         </NavBar>
       </NavBar.Position>
-      <main>{children}</main>
+      <main>
+        <Box css={{paddingBottom: 60, '@bp1': {paddingBottom: 0}}}>{children}</Box>
+      </main>
     </>
   );
 }

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
+    "@radix-ui/react-alert-dialog": "0.1.7",
     "@radix-ui/react-hover-card": "0.1.5",
     "@radix-ui/react-navigation-menu": "^0.1.2",
     "@radix-ui/react-popover": "0.1.6",

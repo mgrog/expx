@@ -38,7 +38,7 @@ function ChartInfo({data, children, ...props}: Props) {
     <HoverCard {...props} openDelay={100} closeDelay={0}>
       <HoverCardTrigger>{children}</HoverCardTrigger>
       <HoverCardContent>
-        <Box css={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between'}}>
+        <Box flex css={{justifyContent: 'space-between'}}>
           <Text as='h4' css={{marginTop: 0, marginBottom: 10}}>
             Details
           </Text>
@@ -48,16 +48,9 @@ function ChartInfo({data, children, ...props}: Props) {
             </Text>
           )}
         </Box>
-        <Box css={{display: 'flex', flexDirection: 'column'}}>
-          <Box css={{display: 'flex', alignItems: 'center', height: 100}}>
-            <Box
-              css={{
-                display: 'flex',
-                flexDirection: 'column',
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
+        <Box flex col>
+          <Box flex css={{alignItems: 'center', height: 100}}>
+            <Box flex col centered grow>
               <Text as='label' css={{marginBottom: 15, fontWeight: 700}}>
                 Apy
               </Text>
@@ -66,14 +59,7 @@ function ChartInfo({data, children, ...props}: Props) {
               </Text>
             </Box>
             <Separator decorative orientation='vertical' css={{margin: '0 15px'}} />
-            <Box
-              css={{
-                display: 'flex',
-                flexDirection: 'column',
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
+            <Box flex col centered grow>
               <Text as='label' css={{marginBottom: 15, fontWeight: 700}}>
                 TVL
               </Text>

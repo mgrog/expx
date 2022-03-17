@@ -65,6 +65,7 @@ const StyledItem = styled(NavBarPrimitive.Item, {});
 
 const StyledNavPosition = styled('div', {
   height: 50,
+  zIndex: 999,
   variants: {
     screen: {
       desktop: {
@@ -81,7 +82,7 @@ const StyledNavPosition = styled('div', {
       },
       mobile: {
         position: 'fixed',
-        bottom: 0,
+        bottom: 10,
         width: '100vw',
 
         [`& ${StyledList}`]: {

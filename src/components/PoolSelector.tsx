@@ -10,7 +10,10 @@ import useSWR from 'swr';
 
 function PoolSelector() {
   const {data} = useSWR<PoolData[], any>('/api/fake-pools', fetcher, {suspense: true});
-  const changePool = useSetAtom(selectedPoolAtom);
+  const setPoolAtom = useSetAtom(selectedPoolAtom);
+  const changePool = (index: number) => {
+    setPoolAtom({index, ...data![index]});
+  };
 
   return <Flipper<PoolData> list={data!} renderItem={PoolItem} setSelected={changePool} />;
 }

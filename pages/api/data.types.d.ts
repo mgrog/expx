@@ -29,13 +29,11 @@ export type ExtendedPoolDataWithSeries = {
 export type User = {
   id: number;
   username: string;
-  contracts: [
-    {
-      id: number;
-      symbol: string;
-      holding: number;
-    },
-  ];
+  contracts: {
+    id: string;
+    symbol: string;
+    holding: number;
+  }[];
 };
 
 export type LogInPayload = {

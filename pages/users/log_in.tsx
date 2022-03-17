@@ -1,7 +1,7 @@
 import {SplashLayout} from '@components/SplashLayout';
 import {Box, Button, Card, Error, Input, Text} from '@elements';
 import {userAtom} from '@root/src/atoms';
-import {useAtom, useSetAtom} from 'jotai';
+import {useSetAtom} from 'jotai';
 import Cookies from 'js-cookie';
 import {useRouter} from 'next/router';
 import React from 'react';
@@ -9,7 +9,6 @@ import {useForm} from 'react-hook-form';
 
 function LogIn() {
   const router = useRouter();
-  const [user] = useAtom(userAtom);
   const setUser = useSetAtom(userAtom);
 
   const {
@@ -43,12 +42,20 @@ function LogIn() {
   return (
     <SplashLayout>
       <Box flex w-full centered>
-        <Card css={{px: 50, height: '100%', marginTop: 20}}>
+        <Card
+          rounded
+          css={{
+            px: 50,
+            height: '100%',
+            marginTop: 20,
+            boxShadow: '$overlay',
+          }}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Box flex col css={{gap: 30}}>
               <Text family='alternate'>Log In</Text>
               <Box>
                 <Input
+                  fluid
                   placeholder='enter username'
                   {...register('username', {required: 'Username is required'})}
                 />
@@ -56,6 +63,7 @@ function LogIn() {
               </Box>
               <Box>
                 <Input
+                  fluid
                   placeholder='enter password'
                   {...register('password', {required: 'Password is required'})}
                 />

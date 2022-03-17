@@ -54,9 +54,10 @@ function BarChart({height, width, maxValue, selectedPoolIndex}: Props) {
     };
   }, [selectedPoolIndex]);
 
-  const barCouple = (comparedPoolIndex: number, baseX: number) => {
-    const OFFSET = 40;
+  const OFFSET = width * 0.1;
+  const X_INTERVAL = width * 0.3;
 
+  const barCouple = (comparedPoolIndex: number, baseX: number) => {
     return (
       <Fragment key={comparedPoolIndex}>
         <g>
@@ -112,7 +113,7 @@ function BarChart({height, width, maxValue, selectedPoolIndex}: Props) {
       {useMemo(
         () =>
           comparedPools.map((_pool, i) => {
-            return barCouple(i, marginX + i * 150);
+            return barCouple(i, marginX + i * X_INTERVAL);
           }),
         [comparedPools, selectedPool],
       )}

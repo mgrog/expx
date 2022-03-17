@@ -1,5 +1,3 @@
-import Cookies from 'js-cookie';
-import {NextApiRequest} from 'next';
 import {NextRequest, NextResponse} from 'next/server';
 
 export function middleware(req: NextRequest) {

@@ -4,7 +4,7 @@ import {Box} from './Box';
 
 const Spin = styled('div', {
   flex: 1,
-  minHeight: 30,
+  minHeight: 100,
   minwidth: 30,
   margin: 'auto',
 });

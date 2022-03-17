@@ -2,6 +2,7 @@ import {createStitches} from '@stitches/react';
 
 export const {styled, css, keyframes, getCssText} = createStitches({
   media: {
+    bp0: '(min-width: 470px)',
     bp1: '(min-width: 640px)',
     bp2: '(min-width: 768px)',
     bp3: '(min-width: 1024px)',
@@ -10,6 +11,7 @@ export const {styled, css, keyframes, getCssText} = createStitches({
     colors: {
       periwinkle: '#555FDA',
       'gray-100': '#F8FAFC',
+      'gray-300': '#c9cdd4',
       'gray-700': '#304858',
       'gray-800': '#131722',
       blue: '#2962FF',
@@ -25,6 +27,10 @@ export const {styled, css, keyframes, getCssText} = createStitches({
       4: '40px',
       5: '64px',
       6: '96px',
+    },
+    shadows: {
+      overlay:
+        'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
     },
   },
   utils: {
