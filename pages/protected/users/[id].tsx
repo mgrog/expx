@@ -32,7 +32,7 @@ function AccountPage() {
         return resizeLineChart(750, 300, 30);
       }
       if (window.screen.width >= 1024) {
-        return resizeLineChart(850, 300, 30);
+        return resizeLineChart(950, 300, 30);
       }
       // initial case, smallest size
       resizeLineChart(320, 200, 15);
@@ -69,7 +69,7 @@ function AccountPage() {
             '@bp2': {width: 700},
             '@bp3': {width: 900},
           }}>
-          <Box flex col centered='vertical' css={{minHeight: 235}}>
+          <Box flex col centered='vertical' css={{minHeight: 235, '@bp1': {minHeight: 280}}}>
             <Suspense fallback={<Spinner />}>
               <LineChart
                 width={lineChartWidth}
@@ -82,7 +82,10 @@ function AccountPage() {
           </Box>
         </Card>
       </Box>
-      <Box flex w-full css={{flexWrap: 'wrap-reverse', gap: 10, my: 10}}>
+      <Box
+        flex
+        w-full
+        css={{flexWrap: 'wrap-reverse', gap: 10, my: 10, '@bp2': {flexWrap: 'nowrap'}}}>
         <Card
           rounded={{'@bp2': true}}
           css={{
