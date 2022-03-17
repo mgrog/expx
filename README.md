@@ -26,3 +26,4 @@ Sign in with "username": "user@expx.fi", "password": "Br98PKe\*js76QaF@1OdX"
 ### Notes
 
 - The authentication is a little faked, but I felt it was outside the scope to have a fully working jwt authentication just for a demo. It uses _a_ cookie at least.
+- I'm using React 18 RC, hopefully nothing blows up but contact me if something isn't working on your end.
